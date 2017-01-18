@@ -15,23 +15,40 @@ public void setup()
   }
 }
 public boolean palindrome(String word)
-{ if (word.substring(0).equals(reverse(word)))
+{ String reverseor= new String();
+  for( int i=0; i<word.length();i++)
+  {
+    if(word.charAt(i)!=0 && Character.isLetter(word.charAt(i))==true)
+    {
+reverseor=reverseor+word.charAt(i);
+    }
+  };
+  if (reverseor.equals(reverse(word)))
   {return true;
   }
   else
-  return false;
+  {
+   return false;
+  
+  }
+  
 }
 public String reverse(String str)
 {
     String sNew = new String();
-    int last= sNew.length()-1;
+    int last= str.length()-1;
     for ( int i= last; i>=0; i--)
     {
-      String p= str.substring(i,i-1);
+      if(str.substring(i,i+1)!=" " && Character.isLetter(str.charAt(i))==true)
+      {
+        String p= str.substring(i,i+1);
       sNew=sNew+p;
+      }
+      
+
     }
-    
-    return sNew;
+    return sNew.toLowerCase();
+
 }
 
 
