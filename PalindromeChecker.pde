@@ -21,9 +21,11 @@ public boolean palindrome(String word)
     if(word.charAt(i)!=0 && Character.isLetter(word.charAt(i))==true)
     {
 reverseor=reverseor+word.charAt(i);
+  
     }
   };
-  if (reverseor.equals(reverse(word)))
+  String rev= reverseor.toLowerCase();
+  if (rev.equals(reverse(word)))
   {return true;
   }
   else
